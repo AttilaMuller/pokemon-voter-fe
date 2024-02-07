@@ -1,6 +1,6 @@
 import { defer, map, Observable } from "rxjs";
 import { Pokemon } from "../../models/PokemonModel";
-import http from "../../axios/axios.setup";
+import http from "../../config/axios/axios.setup";
 
 export const getRandomPokemons = (): Observable<Pokemon[]> => {
     return defer(() => http.get('random-pokemons')).pipe(
