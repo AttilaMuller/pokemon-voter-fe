@@ -1,31 +1,31 @@
 .navbar {
-  height: 60px;
-  display: flex;
-  border-bottom: solid 2px #323d491c;
-  margin-bottom: 10px;
-
-  &-logo {
-    padding: 5px 5px 5px 40px;
-  }
-
-  &-options {
+    height: 60px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 200px;
-    margin-left: 40px;
+    border-bottom: solid 2px rgba(50, 61, 73, 0.11);
+    margin-bottom: 10px;
 
-    &-item a {
-      padding-top: 10px;
-      font-weight: 500;
-      font-size: 17px;
-      color: #505968;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
+    &-logo {
+        padding: 5px 5px 5px 40px;
     }
-  }
+
+    &-options {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 200px;
+        margin-left: 40px;
+
+        &-item a {
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 17px;
+            color: #505968;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
 }
