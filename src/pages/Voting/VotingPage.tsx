@@ -1,9 +1,15 @@
 import React from 'react';
+import { Card } from '../../components/Card/Card';
+import './VotingPage.scss';
 
 export const VotingPage = () => {
     return (
-        <div>
-            <p>This is the VotingPage component</p>
+        <div className='voting-page'>
+            <Card/>
+            <div className='voting-page-vs'>
+                <span>VS</span>
+            </div>
+            <Card/>
         </div>
     )
 }

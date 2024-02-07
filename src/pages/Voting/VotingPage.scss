@@ -1,0 +1,14 @@
+.voting-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-vs {
+        background-color: rgba(0, 0, 0, 0.146);
+        padding: 20px;
+        margin: 15px;
+        border-radius: 100px;
+        color: white;
+        font-weight: 800;
+    }
+}
