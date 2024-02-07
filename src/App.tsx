@@ -7,9 +7,9 @@ import { TopTenPage } from './pages/TopTen/TopTenPage';
 
 function App() {
   return (
-    <div>
-      <NavBar />
+    <div className="App">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<VotingPage />} />
           <Route path="/top-ten" element={<TopTenPage />} />
