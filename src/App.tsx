@@ -1,15 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
+import { NavBar } from './components/NavBar/NavBar';
+import { VotingPage } from './pages/Voting/VotingPage';
+import { TopTenPage } from './pages/TopTen/TopTenPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello world!
-        </p>
-      </header>
+    <div>
+      <NavBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<VotingPage />} />
+          <Route path="/top-ten" element={<TopTenPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+
   );
 }
 
