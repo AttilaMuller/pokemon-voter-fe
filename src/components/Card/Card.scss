@@ -17,10 +17,17 @@
         margin: 0 2px;
         font-size: 12px;
         border: solid 1px rgba(255, 255, 255, 0.072);
-        border-radius: 7px;
+        border-radius: 12px;
         color: white;
-        background-color: rgba(137, 137, 137, 0.487);
+        background-color: rgba(92, 92, 92, 0.663);
         font-weight: 100;
+
+        &-small {
+            border-radius: 4px;
+            font-size: 8px;
+            font-weight: 400;
+            background-color: rgba(29, 45, 94, 0.800);
+        }
     }
 
     &-image {

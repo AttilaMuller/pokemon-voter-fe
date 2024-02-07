@@ -13,15 +13,33 @@ export const VotingPage = () => {
 
     useEffect(() => {
         dispatch(randomPokemonsGetAction());
-    }, [dispatch]);
+    }, []);
+
+    if (!pokemons) {
+        return (<div></div>)
+    }
 
     return (
         <div className='voting-page'>
-            <Card />
+            <Card
+                id={pokemons[0].id}
+                name={pokemons[0].name}
+                imageUrl={pokemons[0].imageUrl}
+                votes={pokemons[0].votes}
+                types={pokemons[0].types}
+                abilities={pokemons[0].abilities}
+            />
             <div className='voting-page-vs'>
                 <span>VS</span>
             </div>
-            <Card />
+            <Card
+                id={pokemons[1].id}
+                name={pokemons[1].name}
+                imageUrl={pokemons[1].imageUrl}
+                votes={pokemons[1].votes}
+                types={pokemons[1].types}
+                abilities={pokemons[1].abilities}
+            />
         </div>
     )
 }
