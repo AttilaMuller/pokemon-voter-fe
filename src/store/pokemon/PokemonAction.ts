@@ -20,3 +20,17 @@ export function randomPokemonsGetFailAction(error: string): PokemonActionType {
         payload: error,
     };
 }
+
+export function voteForPokemonAction(id: number): PokemonActionType {
+    return {
+        type: PokemonAction.VOTE_FOR_POKEMON,
+        payload: id,
+    };
+}
+
+export function voteForPokemonFailAction(error: string): PokemonActionType {
+    return {
+        type: PokemonAction.VOTE_FOR_POKEMON_FAIL,
+        payload: error,
+    };
+}

@@ -11,6 +11,10 @@ export enum PokemonAction {
     RANDOM_POKEMONS_GET = "[POKEMON] GET RANDOM POKEMONS",
     RANDOM_POKEMONS_GET_FAIL = "[POKEMON] GET RANDOM POKEMONS ERROR",
     RANDOM_POKEMONS_GET_SUCCESS = "[POKEMON] GET RANDOM POKEMONS SUCCESS",
+
+    VOTE_FOR_POKEMON = "[POKEMON] VOTE FOR POKEMON",
+    VOTE_FOR_POKEMON_FAIL = "[POKEMON] VOTE FOR POKEMON ERROR",
+    VOTE_FOR_POKEMON_SUCCESS = "[POKEMON] VOTE FOR POKEMON SUCCESS",
 }
 
 interface RandomPokemonsGet {
@@ -27,7 +31,19 @@ interface RandomPokemonsGetFail {
     payload: string;
 }
 
+interface VoteForPokemon {
+    type: PokemonAction.VOTE_FOR_POKEMON;
+    payload: number;
+}
+
+interface VoteForPokemonFail {
+    type: PokemonAction.VOTE_FOR_POKEMON_FAIL
+    payload: string;
+}
+
 export type PokemonActionType =
     | RandomPokemonsGet
     | RandomPokemonsGetSuccess
-    | RandomPokemonsGetFail;
+    | RandomPokemonsGetFail
+    | VoteForPokemon
+    | VoteForPokemonFail;

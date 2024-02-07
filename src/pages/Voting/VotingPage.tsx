@@ -12,8 +12,10 @@ export const VotingPage = () => {
     const dispatch = useDispatch<Dispatch<PokemonActionType>>();
 
     useEffect(() => {
-        dispatch(randomPokemonsGetAction());
-    }, []);
+        if (!pokemons) {
+            dispatch(randomPokemonsGetAction());
+        }
+    }, [dispatch]);
 
     if (!pokemons) {
         return (<div></div>)
@@ -28,6 +30,7 @@ export const VotingPage = () => {
                 votes={pokemons[0].votes}
                 types={pokemons[0].types}
                 abilities={pokemons[0].abilities}
+                interactive
             />
             <div className='voting-page-vs'>
                 <span>VS</span>
@@ -39,6 +42,7 @@ export const VotingPage = () => {
                 votes={pokemons[1].votes}
                 types={pokemons[1].types}
                 abilities={pokemons[1].abilities}
+                interactive
             />
         </div>
     )

@@ -26,6 +26,17 @@ export function pokemonReducer(
                 error: action.payload,
                 loading: false,
             };
+        case PokemonAction.VOTE_FOR_POKEMON:
+            return {
+                ...state,
+                loading: true,
+            };
+        case PokemonAction.VOTE_FOR_POKEMON_FAIL:
+            return {
+                ...state,
+                error: action.payload,
+                loading: false,
+            };
         default:
             return state;
     }

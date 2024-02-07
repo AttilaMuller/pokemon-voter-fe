@@ -2,7 +2,7 @@ import { Epic, ofType } from "redux-observable";
 import { catchError } from "rxjs/operators";
 import { mergeMap, of, map } from "rxjs";
 import { PokemonAction } from "./PokemonTypes";
-import { getRandomPokemons } from "./PokemonService";
+import { getRandomPokemons, voteForPokemon } from "./PokemonService";
 import { Pokemon } from "../../models/PokemonModel";
 
 const randomPokemonsGetEpic: Epic<any> = ($actions, $state) =>
@@ -19,7 +19,7 @@ const randomPokemonsGetEpic: Epic<any> = ($actions, $state) =>
                 catchError((error) =>
                     of({
                         type: PokemonAction.RANDOM_POKEMONS_GET_FAIL,
-                        payload: error.message,
+                        payload: error,
                         error: true,
                     })
                 )
@@ -27,4 +27,26 @@ const randomPokemonsGetEpic: Epic<any> = ($actions, $state) =>
         )
     );
 
-export default [randomPokemonsGetEpic];
+const pokemonVoteEpic: Epic<any> = ($actions, $state) =>
+    $actions.pipe(
+        ofType(PokemonAction.VOTE_FOR_POKEMON),
+        map(x => x.payload),
+        mergeMap((id: number) =>
+            voteForPokemon(id).pipe(
+                mergeMap(async () => {
+                    return {
+                        type: PokemonAction.RANDOM_POKEMONS_GET
+                    };
+                }),
+                catchError((error) =>
+                    of({
+                        type: PokemonAction.VOTE_FOR_POKEMON_FAIL,
+                        payload: error,
+                        error: true,
+                    })
+                )
+            )
+        )
+    );
+
+export default [randomPokemonsGetEpic, pokemonVoteEpic];
