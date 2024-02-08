@@ -16,7 +16,7 @@ export const VotingPage = () => {
         if (!pokemons) {
             dispatch(randomPokemonsGetAction());
         }
-    }, [dispatch]);
+    }, [dispatch, pokemons]);
 
     const resetVotes = () => {
         if (loading) {
@@ -26,7 +26,7 @@ export const VotingPage = () => {
     }
 
     if (!pokemons || loading) {
-        return (<div><img src='https://i.gifer.com/5Q0v.gif'/></div>)
+        return (<div><img src='https://i.gifer.com/5Q0v.gif' alt=''/></div>)
     }
 
     return (

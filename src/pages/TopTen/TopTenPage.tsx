@@ -28,7 +28,7 @@ export const TopTenPage = () => {
     ));
 
     if (!pokemons || loading) {
-        return (<div><img src='https://i.gifer.com/5Q0v.gif'/></div>)
+        return (<div><img src='https://i.gifer.com/5Q0v.gif' alt=''/></div>)
     }
 
     return (

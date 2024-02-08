@@ -87,5 +87,5 @@ const resetPokemonVotesEpic: Epic<any> = ($actions, $state) =>
             )
         )
     );
-
-export default [randomPokemonsGetEpic, topTenPokemonsGetEpic, pokemonVoteEpic, resetPokemonVotesEpic];
+const epics = [randomPokemonsGetEpic, topTenPokemonsGetEpic, pokemonVoteEpic, resetPokemonVotesEpic];
+export default epics;

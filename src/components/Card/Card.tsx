@@ -32,7 +32,7 @@ export const Card = ({ id, name, imageUrl, votes, types, abilities, interactive 
                 <span className='card-title'>{name}</span>
                 <span className='card-title-votes'>{votes}</span>
             </div>
-            <img className='card-image' src={imageUrl} />
+            <img className='card-image' src={imageUrl} alt='card' />
             <div className='card-types'>
                 {mapTypes()}
             </div>
@@ -49,7 +49,7 @@ export const Card = ({ id, name, imageUrl, votes, types, abilities, interactive 
                 <span className='card-title'>{name}</span>
                 <span className='card-title-votes'>{votes}</span>
             </div>
-            <img className='card-image' src={imageUrl} />
+            <img className='card-image' src={imageUrl} alt='card' />
             <div className='card-types'>
                 {mapTypes()}
             </div>
