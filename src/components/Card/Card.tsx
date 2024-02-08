@@ -1,10 +1,10 @@
-import React from 'react';
-import './Card.scss';
-import { Pokemon } from '../../models/PokemonModel';
-import { voteForPokemonAction } from '../../store/pokemon/PokemonAction';
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
-import { PokemonActionType } from '../../store/pokemon/PokemonTypes';
+import React from "react";
+import "./Card.scss";
+import { Pokemon } from "../../models/PokemonModel";
+import { voteForPokemonAction } from "../../store/pokemon/PokemonAction";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
+import { PokemonActionType } from "../../store/pokemon/PokemonTypes";
 
 interface Props extends Pokemon {
     interactive?: boolean;

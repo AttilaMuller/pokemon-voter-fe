@@ -5,7 +5,7 @@ const initialState: PokemonState = {
 };
 
 export function pokemonReducer(
-    state = initialState,
+    state: PokemonState | undefined = initialState,
     action: PokemonActionType
 ): PokemonState {
     switch (action.type) {

@@ -1,11 +1,13 @@
-import { combineReducers } from "redux";
-import { PokemonState } from "./pokemon/PokemonTypes";
+import { Reducer, combineReducers } from "redux";
+import { PokemonActionType, PokemonState } from "./pokemon/PokemonTypes";
 import { pokemonReducer } from "./pokemon/PokemonReducer";
 
 export type AppState = {
     pokemon: PokemonState;
   };
   
-  export default combineReducers({
-    pokemon: pokemonReducer,
+  const reducers: Reducer<AppState, PokemonActionType> = combineReducers<AppState>({
+    pokemon: pokemonReducer as unknown as PokemonState,
   });
+
+  export default reducers;

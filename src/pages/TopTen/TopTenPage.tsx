@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { Card } from '../../components/Card/Card';
-import './TopTenPage.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../store/reducers';
-import { Dispatch } from 'redux';
-import { PokemonActionType } from '../../store/pokemon/PokemonTypes';
-import { topTenPokemonsGetAction } from '../../store/pokemon/PokemonAction';
+import React, { useEffect } from "react";
+import { Card } from "../../components/Card/Card";
+import "./TopTenPage.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../store/reducers";
+import { Dispatch } from "redux";
+import { PokemonActionType } from "../../store/pokemon/PokemonTypes";
+import { topTenPokemonsGetAction } from "../../store/pokemon/PokemonAction";
 
 export const TopTenPage = () => {
     const pokemons = useSelector((state: AppState) => state.pokemon.topTenPokemons);
@@ -28,7 +28,7 @@ export const TopTenPage = () => {
     ));
 
     if (!pokemons || loading) {
-        return (<div><img src="https://i.gifer.com/5Q0v.gif"/></div>)
+        return (<div><img src='https://i.gifer.com/5Q0v.gif'/></div>)
     }
 
     return (

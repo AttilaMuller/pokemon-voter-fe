@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from '../../images/logo.png';
-import './NavBar.scss';
-import { Link } from 'react-router-dom';
+import React from "react";
+import logo from "../../images/logo.png";
+import "./NavBar.scss";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
     return (

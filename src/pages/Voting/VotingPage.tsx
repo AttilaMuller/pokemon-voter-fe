@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { Card } from '../../components/Card/Card';
-import './VotingPage.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from '../../store/reducers';
-import { randomPokemonsGetAction, resetPokemonVotesAction } from '../../store/pokemon/PokemonAction';
-import { PokemonActionType } from '../../store/pokemon/PokemonTypes';
-import { Dispatch } from 'redux';
+import React, { useEffect } from "react";
+import { Card } from "../../components/Card/Card";
+import "./VotingPage.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../store/reducers";
+import { randomPokemonsGetAction, resetPokemonVotesAction } from "../../store/pokemon/PokemonAction";
+import { PokemonActionType } from "../../store/pokemon/PokemonTypes";
+import { Dispatch } from "redux";
 
 export const VotingPage = () => {
     const pokemons = useSelector((state: AppState) => state.pokemon.randomPokemons);
@@ -26,7 +26,7 @@ export const VotingPage = () => {
     }
 
     if (!pokemons || loading) {
-        return (<div><img src="https://i.gifer.com/5Q0v.gif"/></div>)
+        return (<div><img src='https://i.gifer.com/5Q0v.gif'/></div>)
     }
 
     return (
