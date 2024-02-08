@@ -15,26 +15,25 @@
     }
 
     &-vs {
-        background-color: rgba(0, 0, 0, 0.146);
+        background-color: #00000025;
         padding: 20px;
         margin: 15px;
         border-radius: 100px;
-        color: white;
+        color: #ffffff;
         font-weight: 800;
     }
     
     &-button {
-        width: 120px;
+        width: 200px;
         height: 40px;
         border-radius: 20px;
         cursor: pointer;
-        background-color: #ffcdcd;
+        background-color: #c97575;
         border: solid 0.2px #bb4545;
-        color: #363636;
+        color: #ffffff;
 
         &:hover {
             background-color: #e70000;
-            color: white;
         }
 
         &-wrapper {
