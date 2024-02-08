@@ -34,3 +34,23 @@ export function voteForPokemonFailAction(error: string): PokemonActionType {
         payload: error,
     };
 }
+
+export function topTenPokemonsGetAction(): PokemonActionType {
+    return {
+        type: PokemonAction.TOP_TEN_POKEMONS_GET,
+    };
+}
+
+export function topTenPokemonsGetSuccessAction(pokemons: Pokemon[]): PokemonActionType {
+    return {
+        type: PokemonAction.TOP_TEN_POKEMONS_GET_SUCCESS,
+        payload: { pokemons },
+    };
+}
+
+export function topTenPokemonsGetFailAction(error: string): PokemonActionType {
+    return {
+        type: PokemonAction.TOP_TEN_POKEMONS_GET_FAIL,
+        payload: error,
+    };
+}

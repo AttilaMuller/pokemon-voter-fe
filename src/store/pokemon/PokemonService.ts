@@ -8,6 +8,12 @@ export const getRandomPokemons = (): Observable<Pokemon[]> => {
     );
 };
 
+export const getTopTenPokemons = (): Observable<Pokemon[]> => {
+    return defer(() => http.get('top-ten-pokemons')).pipe(
+        map((result: any) => result.data)
+    );
+};
+
 export const voteForPokemon = (id: number): Observable<Pokemon> => {
     return defer(() => http.post('vote', { pokemonId: id })).pipe(
       map((result: any) => result.data)
