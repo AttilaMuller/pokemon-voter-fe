@@ -1,0 +1,16 @@
+.top-ten-page {
+    display: flex;
+    justify-content: center;
+
+    &-card-wrapper {
+        max-width: 500px;
+        display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &>div {
+            margin-bottom: 20px;
+        }
+    }
+}

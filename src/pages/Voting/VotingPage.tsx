@@ -9,6 +9,7 @@ import { Dispatch } from 'redux';
 
 export const VotingPage = () => {
     const pokemons = useSelector((state: AppState) => state.pokemon.randomPokemons);
+    const loading = useSelector((state: AppState) => state.pokemon.loading);
     const dispatch = useDispatch<Dispatch<PokemonActionType>>();
 
     useEffect(() => {
@@ -17,8 +18,8 @@ export const VotingPage = () => {
         }
     }, [dispatch]);
 
-    if (!pokemons) {
-        return (<div></div>)
+    if (!pokemons || loading) {
+        return (<div><img src="https://i.gifer.com/5Q0v.gif"/></div>)
     }
 
     return (
