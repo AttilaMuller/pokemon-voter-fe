@@ -11,6 +11,7 @@ export function pokemonReducer(
     switch (action.type) {
         case PokemonAction.RANDOM_POKEMONS_GET:
         case PokemonAction.TOP_TEN_POKEMONS_GET:
+        case PokemonAction.RESET_POKEMON_VOTES:
             return {
                 ...state,
                 loading: true,
@@ -34,6 +35,7 @@ export function pokemonReducer(
             };
         case PokemonAction.RANDOM_POKEMONS_GET_FAIL:
         case PokemonAction.VOTE_FOR_POKEMON_FAIL:
+        case PokemonAction.RESET_POKEMON_VOTES_FAIL:
             return {
                 ...state,
                 error: action.payload,

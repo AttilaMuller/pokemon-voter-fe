@@ -2,7 +2,7 @@ import { Epic, ofType } from "redux-observable";
 import { catchError } from "rxjs/operators";
 import { mergeMap, of, map } from "rxjs";
 import { PokemonAction } from "./PokemonTypes";
-import { getRandomPokemons, getTopTenPokemons, voteForPokemon } from "./PokemonService";
+import { getRandomPokemons, getTopTenPokemons, resetPokemonVotes, voteForPokemon } from "./PokemonService";
 import { Pokemon } from "../../models/PokemonModel";
 
 const randomPokemonsGetEpic: Epic<any> = ($actions, $state) =>
@@ -68,4 +68,24 @@ const pokemonVoteEpic: Epic<any> = ($actions, $state) =>
         )
     );
 
-export default [randomPokemonsGetEpic, topTenPokemonsGetEpic, pokemonVoteEpic];
+const resetPokemonVotesEpic: Epic<any> = ($actions, $state) =>
+    $actions.pipe(
+        ofType(PokemonAction.RESET_POKEMON_VOTES),
+        mergeMap(() =>
+            resetPokemonVotes().pipe(
+                mergeMap(async () => {
+                    return {
+                        type: PokemonAction.RANDOM_POKEMONS_GET
+                    };
+                }),
+                catchError((error) =>
+                    of({
+                        type: PokemonAction.RESET_POKEMON_VOTES_FAIL,
+                        payload: error
+                    })
+                )
+            )
+        )
+    );
+
+export default [randomPokemonsGetEpic, topTenPokemonsGetEpic, pokemonVoteEpic, resetPokemonVotesEpic];

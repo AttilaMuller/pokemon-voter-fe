@@ -19,3 +19,9 @@ export const voteForPokemon = (id: number): Observable<Pokemon> => {
       map((result: any) => result.data)
     );
 };
+
+export const resetPokemonVotes = (): Observable<void> => {
+    return defer(() => http.post('reset-votes')).pipe(
+      map((result: any) => result.data)
+    );
+};

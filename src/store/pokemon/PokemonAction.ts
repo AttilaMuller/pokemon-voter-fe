@@ -54,3 +54,16 @@ export function topTenPokemonsGetFailAction(error: string): PokemonActionType {
         payload: error,
     };
 }
+
+export function resetPokemonVotesAction(): PokemonActionType {
+    return {
+        type: PokemonAction.RESET_POKEMON_VOTES,
+    };
+}
+
+export function resetPokemonVotesFailAction(error: string): PokemonActionType {
+    return {
+        type: PokemonAction.RESET_POKEMON_VOTES_FAIL,
+        payload: error,
+    };
+}
